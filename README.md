@@ -73,4 +73,27 @@ Variable  | Description                       | Type        | Required |
 ### Step 5
 Inside ```Render``` we will be creating a circle which radius changes based on music loudness, but you can create any shape or object as long as it has some parameters that can change based on loudness or frequency
 
+Here we are using gizeh library for vector graphics </br>
+> **Note** </br>
+> PIL usually produces higher quality frames but gizeh is faster to render
+
+```py
+radius = self.Loudness[self.GetMoment(time)] * self.Scale
+
+surface = gz.Surface(Options.WIDTH, Options.HEIGHT)
+circle = gz.circle(radius, xy=(self.X, self.Y), fill=tuple(x / 255 for x in self.Color))
+circle.draw(surface)
+return surface.get_npimage(transparent=True)
+```
+
+Example with PIL
+```py
+radius = self.Loudness[self.GetMoment(time)] * self.Scale
+
+image = Image.new("RGBA", (Options.WIDTH, Options.HEIGHT), (0, 0, 0, 0))
+draw = ImageDraw.Draw(image)
+draw.ellipse((self.X - radius, self.Y - radius, self.X + radius, self.Y + radius), fill=self.Color)
+return np.asarray(image)
+```
+
 ## Existing visualizers:
