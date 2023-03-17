@@ -130,6 +130,6 @@ if __name__ == "__main__":
 > 2. ```Video.ShowTransparent``` takes a render method and optional keyword arguments, and makes background transparent
 > 3. ```Video.Generate``` takes a list of objects to render
 
-The result is saved in a video.mp4 file
+The result is saved in *video.mp4* file
 
 ## Existing visualizers:
