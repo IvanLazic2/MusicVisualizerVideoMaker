@@ -13,6 +13,11 @@ pip install virtualenv
 ```
 python -m virtualenv <environment-name>
 ```
+Run to activate environment
+```
+environment\Scripts\activate
+```
+> To deactivate run: ```environment\Scripts\deactivate.bat```
 
 Run to install packages
 ```
@@ -58,7 +63,7 @@ Variable       | Description                                        | Type      
 ```audioFile```| Path to and audio file to use for video generation | ```str``` | Yes      |
 
 ### Step 4
-Create a method ```Render``` with one mandatory parameter ```time``` and optional keyword arguments ```**kwargs``` </br>
+Create a method ```Render``` with one mandatory parameter ```time``` and optional keyword arguments ```**kwargs```
 
 ```py
 def Render(self, time, **kwargs)
@@ -73,8 +78,8 @@ Variable  | Description                       | Type        | Required |
 ### Step 5
 Inside ```Render``` we will be creating a circle which radius changes based on music loudness, but you can create any shape or object as long as it has some parameters that can change based on loudness or frequency
 
-Here we are using gizeh library for vector graphics </br>
-> **Note** </br>
+Here we are using gizeh library for vector graphics
+> **Note** \
 > PIL usually produces higher quality frames but gizeh is faster to render
 
 ```py
@@ -95,5 +100,7 @@ draw = ImageDraw.Draw(image)
 draw.ellipse((self.X - radius, self.Y - radius, self.X + radius, self.Y + radius), fill=self.Color)
 return np.asarray(image)
 ```
+> 1. Loudness is a numpy array which contains music loudness data, length is number of frames
+> 2. GetMoment(time) returns current frame number
 
 ## Existing visualizers:
