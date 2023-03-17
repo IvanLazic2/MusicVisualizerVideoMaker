@@ -100,7 +100,7 @@ draw = ImageDraw.Draw(image)
 draw.ellipse((self.X - radius, self.Y - radius, self.X + radius, self.Y + radius), fill=self.Color)
 return np.asarray(image)
 ```
-> 1. ```Loudness``` is a numpy array which contains music loudness data, length is number of frames
+> 1. ```Loudness``` is a numpy array which contains music loudness data. Its length is number of frames
 > 2. ```GetMoment(time)``` returns current frame number
 
 ### Step 6
