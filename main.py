@@ -1,5 +1,5 @@
-import gizeh as gz
-import moviepy.editor as mpy
+#import gizeh as gz
+#import moviepy.editor as mpy
 
 from Video import Video
 from visualizers.CircleVisualizer import CircleVisualizer
@@ -7,7 +7,7 @@ from visualizers.BackgroundImageVisualizer import BackgroundImageVisualizer
 from Options import Options        
 
 if __name__ == "__main__":
-    audioFile = "audio/bellish test v2 mastered.wav"
+    audioFile = "audio/audio.wav"
 
     video = Video(audioFile)
 

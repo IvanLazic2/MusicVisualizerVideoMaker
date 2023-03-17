@@ -28,11 +28,10 @@ class CircleVisualizer(Visualizer):
 
         super().__init__(audioFile)
 
+        self.LoudnessConvolved = self.CreateLoudnessConvolved(kernelSize=10)
+
         self.radiusPrev = 0
 
-        self.kernelSize = 10
-        self.kernel = np.ones(self.kernelSize) / self.kernelSize
-        self.loudnessConvolved = np.convolve(self.Loudness, self.kernel)
 
         self.X = x
         self.Y = y
@@ -66,7 +65,7 @@ class CircleVisualizer(Visualizer):
         return result
 
     def renderReactiveRadius(self, time):
-        radius = self.loudnessConvolved[self.GetMoment(time)] * self.Scale
+        radius = self.LoudnessConvolved[self.GetMoment(time)] * self.Scale
 
         if radius < self.MinRadius:
            radius = self.MinRadius

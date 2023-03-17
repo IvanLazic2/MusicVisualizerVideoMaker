@@ -21,9 +21,7 @@ class BackgroundImageVisualizer(Visualizer):
 
         super().__init__(audioFile)
 
-        self.kernelSize = 50
-        self.kernel = np.ones(self.kernelSize) / self.kernelSize
-        self.loudnessConvolved = np.convolve(self.Loudness, self.kernel)
+        self.LoudnessConvolved = self.CreateLoudnessConvolved(kernelSize=50)
 
         self.Scale = scale
         self.Zoom = int(Options.HEIGHT * zoomPercentage)
@@ -47,7 +45,7 @@ class BackgroundImageVisualizer(Visualizer):
 
 
     def Render(self, time, **kwargs):
-        self.CurrentLoudness = self.loudnessConvolved[self.GetMoment(time)]
+        self.CurrentLoudness = self.LoudnessConvolved[self.GetMoment(time)]
 
         if kwargs.get("reactiveBrightness"):
             self.Image = self.renderReactiveBrightness(time)

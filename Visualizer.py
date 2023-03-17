@@ -26,6 +26,10 @@ class Visualizer:
         self.FrequenciesIndexRatio = len(self.Frequencies) / self.Frequencies[len(self.Frequencies) - 1]
 
     
+    def CreateLoudnessConvolved(self, kernelSize):
+        kernel = np.ones(kernelSize) / kernelSize
+        return np.convolve(self.Loudness, kernel)
+
     def GetFreqDb(self, time, freq):
         return self.Spectrogram[int(freq * self.FrequenciesIndexRatio)][int(time * self.TimeIndexRatio)]
 
