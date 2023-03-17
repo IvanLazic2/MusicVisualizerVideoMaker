@@ -126,8 +126,8 @@ if __name__ == "__main__":
   video.Generate([circle])
 ```
 
-> 1. ```Video``` object takes the path to the audio file \
-> 2. ```Video.ShowTransparent``` takes a render method and optional keyword arguments, and makes background transparent \
+> 1. ```Video``` object takes the path to the audio file
+> 2. ```Video.ShowTransparent``` takes a render method and optional keyword arguments, and makes background transparent
 > 3. ```Video.Generate``` takes a list of objects to render
 
 The result is saved in a video.mp4 file
