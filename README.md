@@ -100,7 +100,36 @@ draw = ImageDraw.Draw(image)
 draw.ellipse((self.X - radius, self.Y - radius, self.X + radius, self.Y + radius), fill=self.Color)
 return np.asarray(image)
 ```
-> 1. Loudness is a numpy array which contains music loudness data, length is number of frames
-> 2. GetMoment(time) returns current frame number
+> 1. ```Loudness``` is a numpy array which contains music loudness data, length is number of frames
+> 2. ```GetMoment(time)``` returns current frame number
+
+### Step 6
+Here we will create a visualizer - a white circle in the middle of the screen that responds to music
+```py
+from Video import Video
+from visualizers.MyCustomVisualizer import MyCustomVisualizer
+from Options import Options  
+
+if __name__ == "__main__":
+  audioFile = "audio/audio.wav"
+  video = Video(audioFile)
+  
+  myCustomVisualizer = MyCustomVisualizer(audioFile,
+                                          x=Options.WIDTH / 2
+                                          y=Options.HEIGHT / 2
+                                          color=(255, 255, 255)
+                                          scalePercentage=0.9
+                                          )
+  
+  circle = video.ShowTransparent(myCustomVisualizer.Render)
+  
+  video.Generate([circle])
+```
+
+> ```Video``` object takes the path to the audio file \
+> ```Video.ShowTransparent``` takes a render method and optional keyword arguments, and makes background transparent \
+> ```Video.Generate``` takes a list of objects to render
+
+The result is saved in a video.mp4 file
 
 ## Existing visualizers:
