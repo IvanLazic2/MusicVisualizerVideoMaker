@@ -1,0 +1,6 @@
+__pycache__/
+environment/
+tests/
+audio/
+images/
+*.mp4
