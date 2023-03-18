@@ -1,5 +1,5 @@
 # Music visualizer video maker
-Make a video for a song or a track with custom visualizers based on loudness, frequency...
+Make a video for a song or a track with custom visualizers based on loudness and frequency
 
 ## Example video
 https://youtu.be/I2Sk8WoMwIU
@@ -100,7 +100,7 @@ draw = ImageDraw.Draw(image)
 draw.ellipse((self.X - radius, self.Y - radius, self.X + radius, self.Y + radius), fill=self.Color)
 return np.asarray(image)
 ```
-> 1. ```Loudness``` is a numpy array which contains music loudness data, length is number of frames
+> 1. ```Loudness``` is a numpy array which contains music loudness data. Its length is number of frames
 > 2. ```GetMoment(time)``` returns current frame number
 
 ### Step 6
@@ -126,10 +126,18 @@ if __name__ == "__main__":
   video.Generate([circle])
 ```
 
+<<<<<<< HEAD
 > ```Video``` object takes the path to the audio file and output name \
 > ```Video.ShowTransparent``` takes a render method and optional keyword arguments, and makes background transparent \
 > ```Video.Generate``` takes a list of objects to render
 
 The result is saved in a file named ```output```
+=======
+> 1. ```Video``` object takes the path to the audio file
+> 2. ```Video.ShowTransparent``` takes a render method and optional keyword arguments, and makes background transparent
+> 3. ```Video.Generate``` takes a list of objects to render
+
+The result is saved in *video.mp4* file
+>>>>>>> ad6d4c68dbd111eb9098e39a89a0f3133d3f9a9b
 
 ## Existing visualizers:
