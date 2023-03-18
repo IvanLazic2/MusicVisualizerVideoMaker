@@ -9,7 +9,7 @@ from Options import Options
 if __name__ == "__main__":
     audioFile = "audio/audio.wav"
 
-    video = Video(audioFile)
+    video = Video(audioFile, output="video.mp4")
 
     #backgroundImage = video.RenderStillBackgroundImage("images/image.jpg")
     backgroundImageVisualizer = BackgroundImageVisualizer(audioFile, 

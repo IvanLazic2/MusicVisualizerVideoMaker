@@ -112,7 +112,7 @@ from Options import Options
 
 if __name__ == "__main__":
   audioFile = "audio/audio.wav"
-  video = Video(audioFile)
+  video = Video(audioFile, output="video.mp4")
   
   myCustomVisualizer = MyCustomVisualizer(audioFile,
                                           x=Options.WIDTH / 2
@@ -126,10 +126,10 @@ if __name__ == "__main__":
   video.Generate([circle])
 ```
 
-> ```Video``` object takes the path to the audio file \
+> ```Video``` object takes the path to the audio file and output name \
 > ```Video.ShowTransparent``` takes a render method and optional keyword arguments, and makes background transparent \
 > ```Video.Generate``` takes a list of objects to render
 
-The result is saved in a video.mp4 file
+The result is saved in a file named ```output```
 
 ## Existing visualizers:

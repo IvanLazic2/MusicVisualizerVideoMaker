@@ -7,8 +7,9 @@ import gizeh as gz
 from Options import Options
 
 class Video:
-    def __init__(self, audioFile):
+    def __init__(self, audioFile, output):
         self.Audio = mpy.AudioFileClip(audioFile)
+        self.Output = output
         self.Duration = int(self.Audio.duration)
         self.MainSurface = gz.Surface(Options.WIDTH, Options.HEIGHT, bg_color=(0, 0, 1, 0))
 
@@ -23,7 +24,7 @@ class Video:
     def Generate(self, videoElems):
         video = mpy.CompositeVideoClip(videoElems, size=(Options.WIDTH, Options.HEIGHT)).set_duration(self.Duration)
         video = video.set_audio(self.Audio)
-        video.write_videofile('video.mp4', fps=Options.FPS, threads=multiprocessing.cpu_count())
+        video.write_videofile(self.Output, fps=Options.FPS, threads=multiprocessing.cpu_count())
 
 
 
