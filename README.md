@@ -126,18 +126,10 @@ if __name__ == "__main__":
   video.Generate([circle])
 ```
 
-<<<<<<< HEAD
 > ```Video``` object takes the path to the audio file and output name \
 > ```Video.ShowTransparent``` takes a render method and optional keyword arguments, and makes background transparent \
 > ```Video.Generate``` takes a list of objects to render
 
 The result is saved in a file named ```output```
-=======
-> 1. ```Video``` object takes the path to the audio file
-> 2. ```Video.ShowTransparent``` takes a render method and optional keyword arguments, and makes background transparent
-> 3. ```Video.Generate``` takes a list of objects to render
-
-The result is saved in *video.mp4* file
->>>>>>> ad6d4c68dbd111eb9098e39a89a0f3133d3f9a9b
 
 ## Existing visualizers:
