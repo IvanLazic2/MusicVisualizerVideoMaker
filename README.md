@@ -6,7 +6,7 @@ https://youtu.be/I2Sk8WoMwIU
 
 ## Environment
 
-Run to create an environment
+Run to create environment
 ```
 pip install virtualenv
 ```
@@ -37,7 +37,7 @@ from Options import Options
 ```
 
 ### Step 2
-Create a class for the visualizer in ./visualizers/ directory inheriting Visualizer class
+Create a class for the visualizer in ./visualizers/ directory inheriting ```Visualizer``` class
 ```py
 class MyCustomVisualizer(Visualizer)
 {
@@ -58,9 +58,9 @@ def __init__(self, audioFile, x, y, color, scalePercentage)
   self.Scale = int(scalePercentage * Options.HEIGHT)
 }
 ```
-Variable       | Description                                        | Type      | Required |
----------------|----------------------------------------------------|-----------|----------|
-```audioFile```| Path to and audio file to use for video generation | ```str``` | Yes      |
+Variable       | Description                                       | Type      | Required |
+---------------|---------------------------------------------------|-----------|----------|
+```audioFile```| Path to an audio file to use for video generation | ```str``` | Yes      |
 
 ### Step 4
 Create a method ```Render``` with one mandatory parameter ```time``` and optional keyword arguments ```**kwargs```
