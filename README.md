@@ -1,5 +1,5 @@
 # Music visualizer video maker
-Make a video for a song or a track with custom visualizers based on loudness and frequency
+Make a video for a track with custom visualizers based on loudness and frequency
 
 ## Example video
 https://youtu.be/I2Sk8WoMwIU
