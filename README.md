@@ -115,9 +115,9 @@ if __name__ == "__main__":
   video = Video(audioFile, output="video.mp4")
   
   myCustomVisualizer = MyCustomVisualizer(audioFile,
-                                          x=Options.WIDTH / 2
-                                          y=Options.HEIGHT / 2
-                                          color=(255, 255, 255)
+                                          x=Options.WIDTH / 2,
+                                          y=Options.HEIGHT / 2,
+                                          color=(255, 255, 255),
                                           scalePercentage=0.9
                                           )
   
