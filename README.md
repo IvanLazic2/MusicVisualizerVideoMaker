@@ -2,7 +2,7 @@
 Make a video for a track with custom visualizers based on loudness and frequency
 
 ## Example video
-https://youtu.be/I2Sk8WoMwIU
+https://youtu.be/b9WErqYJ9bo
 
 ## Environment
 
